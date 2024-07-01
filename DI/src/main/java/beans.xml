@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="b1" class="com.incapp.DI.beans.Book" scope = 'singleton'>
+       <property name="name" value="Core Java"/>
+       <property name="cname" value="Incapp Co."/>
+       <property name="price" value="1000"/>
+   </bean>
+   
+   <bean id="a1" class="com.incapp.DI.beans.Author">
+       <property name="AuthorName" value="Prashant Saini"/>
+       <property name="AuthorPhone" value="1234567890"/>
+   </bean>
+   
+   <bean id="a2" class="com.incapp.DI.beans.Author">
+       <property name="AuthorName" value="Prashant Thakur"/>
+       <property name="AuthorPhone" value="9876543210"/>
+   </bean>
+   
+   
+   <bean id="b2" class="com.incapp.DI.beans.Book2">
+       <property name="BookName" value="Adv. Java"/>
+       <property name="BookPrice" value="2000"/>
+       <property name="author" ref="a1"/>
+   </bean>
+   
+   <bean id="b3" class="com.incapp.DI.beans.Book2">
+       <property name="BookName" value="Python"/>
+       <property name="BookPrice" value="2500"/>
+       <property name="author" ref="a2"/>
+   </bean>
+   
+   <bean id="l1" class="com.incapp.DI.beans.Laptop">
+       <constructor-arg type="String" value="HP Laptop Pavilion 15-inch"></constructor-arg>
+       <constructor-arg type="String" value="HP"></constructor-arg>
+       <constructor-arg type="int" value="85000"></constructor-arg>
+   </bean>
+   
+</beans>

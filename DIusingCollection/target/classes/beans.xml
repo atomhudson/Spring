@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="a1" class="com.incapp.DIusingCollection.beans.Author">
+     <property name="AuthorName" value="Prashant Saini"/>
+     <property name="AuthorPhone" value="97654321"/>
+   </bean>
+   
+   <bean id="a2" class="com.incapp.DIusingCollection.beans.Author">
+     <property name="AuthorName" value="Rahul Sir"/>
+     <property name="AuthorPhone" value="123456789"/>
+   </bean>
+   
+   <bean id="book1" class="com.incapp.DIusingCollection.beans.Book1">
+     <property name="BookName" value="Core Java"/>
+     <property name="BookPrice" value="1000"/>
+     <property name="author">
+       <list>
+         <ref bean="a1"/>
+         <ref bean="a2"/>
+       </list>
+     </property>
+   </bean>
+   
+   
+   <bean id="book2" class="com.incapp.DIusingCollection.beans.Book2">
+     <property name="BookName" value="Core Java"/>
+     <property name="BookPrice" value="1000"/>
+     <property name="author">
+      	<map>
+			<entry key="AuthorName" value="Prashant Saini"></entry>
+			<entry key="AuthorPhone" value="598765432123"></entry>
+		</map>
+      	
+     </property>
+     
+   </bean>
+</beans>
